@@ -263,7 +263,8 @@ const comparisonDonut = {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/v1/market-data')
+    const base = (import.meta.env.VITE_API_BASE_URL || '') + '/api/v1'
+    const res = await fetch(`${base}/market-data`)
     const json = await res.json()
     marketData.value = json.data || []
   } catch (e) {

@@ -236,7 +236,8 @@ const hBarOption = computed(() => {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/v1/opportunities')
+    const base = (import.meta.env.VITE_API_BASE_URL || '') + '/api/v1'
+    const res = await fetch(`${base}/opportunities`)
     const json = await res.json()
     opportunities.value = (json.data || []).length > 0 ? json.data : FALLBACK
   } catch {

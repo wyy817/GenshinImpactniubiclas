@@ -206,7 +206,8 @@ const bubbleOption = computed(() => ({
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/v1/personas')
+    const base = (import.meta.env.VITE_API_BASE_URL || '') + '/api/v1'
+    const res = await fetch(`${base}/personas`)
     const json = await res.json()
     personas.value = json.data || []
   } catch (e) {

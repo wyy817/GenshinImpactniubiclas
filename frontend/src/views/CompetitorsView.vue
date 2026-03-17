@@ -296,7 +296,8 @@ const strategyTable = [
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/v1/competitors')
+    const base = (import.meta.env.VITE_API_BASE_URL || '') + '/api/v1'
+    const res = await fetch(`${base}/competitors`)
     const json = await res.json()
     competitors.value = (json.data || []).filter(c => {
       const name = (c.Competitor || c.competitor || '').toLowerCase()
