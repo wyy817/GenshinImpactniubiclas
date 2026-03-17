@@ -46,7 +46,7 @@
         </el-button>
       </el-form>
 
-      <!-- Demo credentials -->
+      <!-- Demo credentials (hidden for production)
       <div class="demo-credentials">
         <div class="demo-title">
           <el-icon><InfoFilled /></el-icon>
@@ -68,6 +68,7 @@
         </div>
         <p class="demo-hint">Click any row to auto-fill credentials</p>
       </div>
+      -->
     </div>
   </div>
 </template>
